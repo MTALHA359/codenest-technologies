@@ -1,32 +1,6 @@
 'use client';
 
-import { useState } from 'react';
-import toast, { Toaster } from 'react-hot-toast'; // 🔥 Import toast
-
 export default function ContactPage() {
-  const [form, setForm] = useState({ name: '', email: '', message: '' });
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    const loadingToast = toast.loading('Sending...');
-    const res = await fetch('/api/contact', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(form),
-    });
-
-    const data = await res.json();
-    toast.dismiss(loadingToast);
-
-    if (res.ok) {
-      toast.success('Checked in successfully!');
-      setForm({ name: '', email: '', message: '' });
-    } else {
-      toast.error(data.error || 'Something went wrong');
-    }
-  };
-
   const facilities = [
     { icon: '🏢', title: 'Modern Office Space', desc: 'Ergonomic design, creative meeting rooms, and open collaboration zones.' },
     { icon: '☕', title: 'Free Coffee & Snacks', desc: 'Unlimited coffee, tea, and snacks to keep our team energized.' },
@@ -37,19 +11,17 @@ export default function ContactPage() {
   ];
 
   return (
-    <main className="bg-white text-black px-6 py-20 space-y-24">
-      {/* Add toaster for showing toast messages */}
-      <Toaster position="top-right" reverseOrder={false} />
-
+    <main className="bg-white text-white-900 px-6 py-20 space-y-24">
+      
       {/* === Contact Section === */}
       <section className="flex flex-col md:flex-row items-start justify-between gap-12 max-w-6xl mx-auto">
         {/* Left: Office Info */}
         <div className="md:w-1/2 space-y-6">
           <h2 className="text-3xl font-bold text-blue-600 uppercase">Contact Our Office</h2>
-          <p className="text-blue-800 text-lg">
+          <p className="text-white-800 text-lg">
             We’d love to hear from you! Whether you have a question about our services, pricing, or want to collaborate — our team is ready to help.
           </p>
-          <div className="text-sm text-blue-700 space-y-2 mt-6">
+          <div className="text-sm text-white-700 space-y-2 mt-6">
             <p><strong>📍 Address:</strong> 123 Innovation Street, Tech City</p>
             <p><strong>📞 Phone:</strong> +92 300 1234567</p>
             <p><strong>✉️ Email:</strong> hello@yoursoftwarehouse.com</p>
@@ -58,39 +30,27 @@ export default function ContactPage() {
         </div>
 
         {/* Right: Contact Form */}
-        <form onSubmit={handleSubmit} className="md:w-1/2 space-y-4 w-full">
-          <h3 className="text-2xl font-semibold text-orange-500 mb-4">Send Us a Message</h3>
+        <div className="md:w-1/2 space-y-4 w-full">
+          <h3 className="text-2xl font-semibold text-blue-500 mb-4">Send Us a Message</h3>
           <input
             type="text"
             placeholder="Your Name"
-            value={form.name}
-            onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-400 rounded-md"
-            required
+            className="w-full px-4 py-2 border border-blue-300 rounded-md"
           />
           <input
             type="email"
             placeholder="Your Email"
-            value={form.email}
-            onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full px-4 py-2 border border-gray-400 rounded-md"
-            required
+            className="w-full px-4 py-2 border border-blue-300 rounded-md"
           />
           <textarea
             placeholder="Your Message"
-            value={form.message}
-            onChange={(e) => setForm({ ...form, message: e.target.value })}
             rows={4}
-            className="w-full px-4 py-2 border border-gray-400 rounded-md"
-            required
+            className="w-full px-4 py-2 border border-blue-300 rounded-md"
           />
-          <button
-            type="submit"
-            className="bg-orange-600 text-white px-6 py-2 rounded-md hover:bg-orange-700 transition"
-          >
+          <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
             Send Message
           </button>
-        </form>
+        </div>
       </section>
 
       {/* === Facilities Section === */}
