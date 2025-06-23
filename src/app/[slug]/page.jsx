@@ -1,5 +1,5 @@
 // /app/blogs/[slug]/page.jsx
-import blogs from '@/data/blogs';
+// import blogs from '@/data/blogs';
 
 export async function generateStaticParams() {
   return blogs.map((blog) => ({
