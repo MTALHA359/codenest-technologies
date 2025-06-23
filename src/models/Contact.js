@@ -1,14 +1,15 @@
 import mongoose from "mongoose";
 
-const contactSchema = new mongoose.Schema(
+const ContactSchema = new mongoose.Schema(
   {
     name: String,
     email: String,
     message: String,
+    source: String,
   },
   { timestamps: true }
 );
 
-// Tell Mongoose to use the 'contacts' collection
-export default mongoose.models.Contact ||
-  mongoose.model("Contact", contactSchema, "contacts");
+export default mongoose.models.Contact || mongoose.model("Contact", ContactSchema);
+
+

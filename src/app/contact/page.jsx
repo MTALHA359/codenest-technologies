@@ -1,6 +1,12 @@
-'use client';
+"use client";
+
+import { useState } from "react";
 
 export default function ContactPage() {
+  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [success, setSuccess] = useState("");
+  const [error, setError] = useState("");
+
   const facilities = [
     { icon: '🏢', title: 'Modern Office Space', desc: 'Ergonomic design, creative meeting rooms, and open collaboration zones.' },
     { icon: '☕', title: 'Free Coffee & Snacks', desc: 'Unlimited coffee, tea, and snacks to keep our team energized.' },
@@ -10,9 +16,37 @@ export default function ContactPage() {
     { icon: '📍', title: 'Central Location', desc: 'Our office is located in the heart of the city with easy transport access.' },
   ];
 
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSuccess(""); setError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, source: "website" }),
+      });
+
+      const data = await res.json();
+
+      if (res.ok) {
+        setSuccess("✅ Message sent successfully!");
+        setForm({ name: "", email: "", message: "" });
+      } else {
+        setError(data.error || "❌ Something went wrong.");
+      }
+    } catch (err) {
+      setError("❌ Failed to send message.");
+      console.error(err);
+    }
+  };
+
   return (
     <main className="bg-white text-white-900 px-6 py-20 space-y-24">
-      
       {/* === Contact Section === */}
       <section className="flex flex-col md:flex-row items-start justify-between gap-12 max-w-6xl mx-auto">
         {/* Left: Office Info */}
@@ -30,27 +64,46 @@ export default function ContactPage() {
         </div>
 
         {/* Right: Contact Form */}
-        <div className="md:w-1/2 space-y-4 w-full">
+        <form onSubmit={handleSubmit} className="md:w-1/2 space-y-4 w-full">
           <h3 className="text-2xl font-semibold text-blue-500 mb-4">Send Us a Message</h3>
+
+          {success && <p className="text-green-600">{success}</p>}
+          {error && <p className="text-red-600">{error}</p>}
+
           <input
             type="text"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
             placeholder="Your Name"
+            required
             className="w-full px-4 py-2 border border-blue-300 rounded-md"
           />
           <input
             type="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
             placeholder="Your Email"
+            required
             className="w-full px-4 py-2 border border-blue-300 rounded-md"
           />
           <textarea
+            name="message"
+            value={form.message}
+            onChange={handleChange}
             placeholder="Your Message"
             rows={4}
+            required
             className="w-full px-4 py-2 border border-blue-300 rounded-md"
           />
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
+          <button
+            type="submit"
+            className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition"
+          >
             Send Message
           </button>
-        </div>
+        </form>
       </section>
 
       {/* === Facilities Section === */}
