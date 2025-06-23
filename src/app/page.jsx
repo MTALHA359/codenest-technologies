@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 
 export default function HomePage() {
   const [loaded, setLoaded] = useState(false);
-  const heroTitle = 'YOUR SOFTWARE HOUSE';
+  const heroTitle = 'CODENEST              TECHNOLOGIES';
 
   useEffect(() => {
     setLoaded(true);
