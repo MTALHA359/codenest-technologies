@@ -8,7 +8,12 @@ export default function BlogPage() {
       <div className="space-y-6">
         {blogs.map((blog) => (
           <div key={blog.id} className="border p-4 rounded shadow-md">
-            <img src={blog.thumbnail} alt={blog.title} className="w-full h-52 object-cover rounded" />
+            <img
+  src="https://images.pexels.com/photos/4348404/pexels-photo-4348404.jpeg?_gl=1*1oqwjz6*_ga*MTU3NjA0MjQ0NS4xNzUwMzMyOTg3*_ga_8JE65Q40S6*czE3NTA2NzI5OTkkbzE3JGcxJHQxNzUwNjczMjU5JGoyNyRsMCRoMA.."
+  alt={blog.title}
+  className="w-full h-52 object-cover rounded"
+/>
+
             <div className="mt-4">
               <h2 className="text-2xl font-semibold">{blog.title}</h2>
               <p className="text-sm text-gray-500">

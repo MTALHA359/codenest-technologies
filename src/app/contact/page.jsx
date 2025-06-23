@@ -45,11 +45,11 @@ export default function ContactPage() {
       <section className="flex flex-col md:flex-row items-start justify-between gap-12 max-w-6xl mx-auto">
         {/* Left: Office Info */}
         <div className="md:w-1/2 space-y-6">
-          <h2 className="text-3xl font-bold text-orange-600 uppercase">Contact Our Office</h2>
-          <p className="text-gray-700 text-lg">
+          <h2 className="text-3xl font-bold text-blue-600 uppercase">Contact Our Office</h2>
+          <p className="text-blue-800 text-lg">
             We’d love to hear from you! Whether you have a question about our services, pricing, or want to collaborate — our team is ready to help.
           </p>
-          <div className="text-sm text-gray-600 space-y-2 mt-6">
+          <div className="text-sm text-blue-700 space-y-2 mt-6">
             <p><strong>📍 Address:</strong> 123 Innovation Street, Tech City</p>
             <p><strong>📞 Phone:</strong> +92 300 1234567</p>
             <p><strong>✉️ Email:</strong> hello@yoursoftwarehouse.com</p>
@@ -94,17 +94,17 @@ export default function ContactPage() {
       </section>
 
       {/* === Facilities Section === */}
-      <section className="bg-orange-50 py-16 px-6 rounded-xl max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center text-orange-600 uppercase mb-10">Our Office Facilities</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 text-black">
+      <section className="bg-blue-50 py-16 px-6 rounded-xl max-w-6xl mx-auto">
+        <h2 className="text-3xl font-bold text-center text-blue-600 uppercase mb-10">Our Office Facilities</h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {facilities.map((item, i) => (
             <div
               key={i}
-              className="bg-white rounded-lg p-6 shadow hover:shadow-md transition border border-orange-100"
+              className="bg-white rounded-lg p-6 shadow hover:shadow-md transition border border-blue-100"
             >
               <div className="text-4xl mb-3">{item.icon}</div>
-              <h3 className="font-semibold text-lg mb-2 text-orange-700">{item.title}</h3>
-              <p className="text-sm text-gray-700">{item.desc}</p>
+              <h3 className="font-semibold text-lg mb-2 text-blue-700">{item.title}</h3>
+              <p className="text-sm text-blue-800">{item.desc}</p>
             </div>
           ))}
         </div>
