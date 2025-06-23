@@ -27,11 +27,13 @@ export default function Navbar() {
               <Link href="/products/ai" className="block px-4 py-2 hover:bg-orange-100">AI Solutions</Link>
             </div>
           </div>
-
+          <Link href="/reviews" className="hover:text-orange-600 transition">Reviews</Link>
           <Link href="/blogs" className="hover:text-orange-600 transition">Blogs</Link>
           <Link href="/about" className="hover:text-orange-600 transition">About</Link>
           <Link href="/contact" className="hover:text-orange-600 transition">Contact</Link>
         </nav>
+
+
 
         {/* Right: Language Selector */}
         <div className="text-sm">
