@@ -3,6 +3,7 @@ import { NextResponse } from "next/server";
 import { dbConnect } from "@/lib/dbConnect";
 
 import Admin from "@/models/Admin";
+export const dynamic = 'force-dynamic';
 
 export async function POST(req) {
   const { username, password } = await req.json();
