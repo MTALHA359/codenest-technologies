@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
-import dbConnect from '@/lib/dbConnect';
+// import dbConnect from '@/lib/dbConnect';
+import { dbConnect } from "@/lib/dbConnect";
+
 import Admin from '@/models/Admin';
 
 export async function POST(req) {
