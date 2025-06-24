@@ -54,7 +54,7 @@ export default function HomePage() {
       </section>
 
       {/* === Our Team Section === */}
-      <section className="py-20">
+       {/* <section className="py-20">
         <h2 className="text-3xl font-bold text-center mb-4 text-blue-600 uppercase">
           Driving Innovation Forward
         </h2>
@@ -75,38 +75,51 @@ export default function HomePage() {
             </div>
           ))}
         </div>
-      </section>
+      </section> */}
+<section className="py-20">
+  <h2 className="text-3xl font-bold text-center mb-4 text-blue-600 uppercase">
+    Driving Innovation Forward
+  </h2>
+  <p className="text-center text-gray-600 mb-12">Meet our expert team members</p>
 
-      {/* === Contact Section === */}
-      <section className="py-20 flex flex-col md:flex-row items-start justify-between gap-12 max-w-6xl mx-auto">
-        <div className="md:w-1/2">
-          <h2 className="text-3xl font-bold mb-4 text-blue-600 uppercase">Send a Message</h2>
-          <p className="text-gray-700">
-            We'd love to hear from you. Let us help you create something great!
-          </p>
+  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    {[
+      {
+        name: 'MR.SAAD',
+        role: 'MERN STACK',
+        image: '/team/saad.jpg',
+      },
+      {
+        name: 'MR.TALHA',
+        role: 'Senior Developer',
+        image: '/team/talha.jpg',
+      },
+      {
+        name: 'MR.NOUMAN',
+        role: 'Project Manager',
+        image: '/team/sir.jpg',
+      },
+    ].map((member, i) => (
+      <div
+        key={i}
+        className="bg-white shadow hover:shadow-lg rounded-xl overflow-hidden transition"
+      >
+        <img
+          src={member.image}
+          alt={member.name}
+          className="w-full h-72 object-cover" // Full image, no crop
+        />
+        <div className="p-6 text-center">
+          <h3 className="font-bold text-lg text-black">{member.name}</h3>
+          <p className="text-sm text-gray-600">{member.role}</p>
         </div>
+      </div>
+    ))}
+  </div>
+</section>
 
-        <div className="md:w-1/2 space-y-4 w-full">
-          <input
-            type="text"
-            placeholder="Your Name"
-            className="w-full px-4 py-2 border border-gray-400 rounded-md"
-          />
-          <input
-            type="email"
-            placeholder="Your Email"
-            className="w-full px-4 py-2 border border-gray-400 rounded-md"
-          />
-          <textarea
-            placeholder="Your Message"
-            rows={4}
-            className="w-full px-4 py-2 border border-gray-400 rounded-md"
-          />
-          <button className="bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition">
-            Send Message
-          </button>
-        </div>
-      </section>
+
+      
     </main>
   );
 }

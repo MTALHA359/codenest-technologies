@@ -8,7 +8,7 @@ export default function Navbar() {
 
         {/* Left: Logo */}
         <div className="text-2xl font-bold text-black">
-          <Link href="/">🚀 SoftHouse</Link>
+          <Link href="/">🚀 CODENEST TECHNOLOGIES </Link>
         </div>
 
         {/* Center: Navigation */}

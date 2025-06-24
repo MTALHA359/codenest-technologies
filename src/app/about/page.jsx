@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react';
 
 export default function AboutPage() {
   const [loaded, setLoaded] = useState(false);
-  const heading = 'ABOUT OUR COMPANY';
+  const heading = 'ABOUT OUR              COMPANY';
 
   useEffect(() => {
     setLoaded(true);
