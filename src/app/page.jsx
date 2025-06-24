@@ -53,29 +53,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* === Our Team Section === */}
-       {/* <section className="py-20">
-        <h2 className="text-3xl font-bold text-center mb-4 text-blue-600 uppercase">
-          Driving Innovation Forward
-        </h2>
-        <p className="text-center text-gray-600 mb-12">Meet our expert team members</p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {[1, 2, 3].map((_, i) => (
-            <div
-              key={i}
-              className="bg-white shadow hover:shadow-lg p-6 rounded-xl text-center transition"
-            >
-              <img
-                src={`https://randomuser.me/api/portraits/men/${30 + i}.jpg`}
-                alt="Team Member"
-                className="w-24 h-24 mx-auto rounded-full mb-4"
-              />
-              <h3 className="font-semibold text-lg">John Doe {i + 1}</h3>
-              <p className="text-sm text-gray-600">Senior Developer</p>
-            </div>
-          ))}
-        </div>
-      </section> */}
 <section className="py-20">
   <h2 className="text-3xl font-bold text-center mb-4 text-blue-600 uppercase">
     Driving Innovation Forward
