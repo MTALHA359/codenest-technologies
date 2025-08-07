@@ -1,36 +1,130 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+🧠 CODE NEST TECHNOLOGIES
+Welcome to CodeNest Technologies, a modern software house website built using Next.js 13+ App Router, tailored for both user-facing pages and an admin dashboard. The platform is designed to showcase your team, collect user messages, and manage content from a secure admin panel.
 
-## Getting Started
+📌 Project Purpose
+The purpose of this project is to:
 
-First, run the development server:
+Showcase a software house's team, services, and branding
 
-```bash
+Provide a responsive landing page with animations
+
+Enable message collection from users
+
+Manage backend content using an admin dashboard (with login protection)
+
+Display dynamic team sections
+
+Support admin functionalities like user management, messages, and settings
+
+🚀 Features
+Animated Hero Section with type-by-character animation
+
+Team Showcase with member cards
+
+Admin Panel (protected using next-auth) featuring:
+
+Dashboard
+
+User management
+
+Messages
+
+Settings
+
+Responsive & clean UI with Tailwind CSS
+
+Font customization using local fonts (Geist)
+
+Deployment ready (e.g., Vercel)
+
+🧰 Technologies Used
+Tech	Description
+Next.js 13+	React framework with App Router
+React	Core UI library
+Tailwind CSS	Utility-first CSS framework
+next-auth	Authentication for admin routes
+Vercel	Deployment platform
+Local Fonts	Custom typography via Geist font
+
+🛠️ How to Use
+1. Clone the Repository
+bash
+Copy
+Edit
+git clone https://github.com/your-username/code-nest-technologies.git
+cd code-nest-technologies
+2. Install Dependencies
+bash
+Copy
+Edit
+npm install
+# or
+yarn install
+3. Setup Environment Variables
+Create a .env.local file and add your NextAuth settings:
+
+env
+Copy
+Edit
+NEXTAUTH_SECRET=your_secret_key
+NEXTAUTH_URL=http://localhost:3000
+You can use services like generate-secret.vercel.app to generate your secret key.
+
+4. Run the Development Server
+bash
+Copy
+Edit
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+The app will be running at: http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+🔐 Admin Access
+To protect the admin panel:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Admin routes check for a logged-in session (isAdmin)
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+You can modify user roles in the database or session logic
 
-## Learn More
+Default admin path: /admin
 
-To learn more about Next.js, take a look at the following resources:
+🌐 Deployment
+The project is ready to deploy on platforms like Vercel or Netlify.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Deploy on Vercel:
+Push your project to GitHub
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+Go to vercel.com
 
-## Deploy on Vercel
+Import your GitHub project
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Add your environment variables
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Deploy!
+
+📁 Folder Structure
+bash
+Copy
+Edit
+src/
+├── app/
+│   ├── page.jsx              # Home page
+│   ├── layout.jsx            # Global layout
+│   ├── admin/                # Admin panel
+│   └── about/                # About page
+├── components/               # Shared UI components
+├── styles/                   # Global CSS
+👨‍💻 Team Members
+MR. SAAD – MERN Stack Developer
+
+MR. TALHA – Senior Developer
+
+MR. NOUMAN – Project Manager
+
+📬 Contact
+Feel free to submit issues or feature requests. Contributions are welcome!
+
+
+
+
+
